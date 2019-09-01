@@ -15,7 +15,7 @@
             <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
         </license>
     </licenses>
-    
+
 	<properties>
 	    <spring.maven.artifact.version>4.3.16.RELEASE</spring.maven.artifact.version>
 		<egovframework.rte.version>3.8.0</egovframework.rte.version>
@@ -114,7 +114,7 @@
 			<version>2.3.2</version>
 		</dependency>
         
-        <!-- mysql이나 oracle DB 사용시 아래 설정 추가  
+        <!-- mysql이나 oracle DB 사용시 아래 설정 추가 -->  
         <dependency>
             <groupId>com.googlecode.log4jdbc</groupId>
             <artifactId>log4jdbc</artifactId>
@@ -139,14 +139,39 @@
             <version>5.1.31</version>
         </dependency>
 
-        <dependency>
+        <!-- <dependency>
             <groupId>ojdbc</groupId>
             <artifactId>ojdbc</artifactId>
             <version>14</version>
             <scope>system</scope>
             <systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc-14.jar</systemPath>
+        </dependency> -->
+        
+        <!-- json 관련 라이브러리 -->
+        <dependency>
+        	<groupId>net.sf.json-lib</groupId>
+        	<artifactId>json-lib</artifactId>
+        	<version>2.4</version>
+        	<classifier>jdk15</classifier>
         </dependency>
-        -->
+        
+        <dependency>
+		    <groupId>org.codehaus.jackson</groupId>
+		    <artifactId>jackson-core-asl</artifactId>
+		    <version>2.5.1</version>
+		</dependency>
+        <dependency>
+       		<groupId>org.codehaus.jackson</groupId>
+       		<artifactId>jackson-mapper-asl</artifactId>
+       		<version>2.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.1</version>
+        </dependency> 
+        <!-- json 관련 라이브러리 끝 -->
+       
 	</dependencies>
 
 	<build>
