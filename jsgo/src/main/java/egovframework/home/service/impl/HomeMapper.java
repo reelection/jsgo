@@ -10,4 +10,5 @@ public interface HomeMapper {
 	
 	ArrayList<HashMap<String, Object>> testList(HashMap<String, Object> param) throws Exception;
 	
+	
 }
