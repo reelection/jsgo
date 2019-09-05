@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!-- header -->
 <jsp:include page="/WEB-INF/jsp/home/include/header.jsp" />
 
@@ -6,6 +8,7 @@
 
 <div class="contents">
 	<h1>test</h1>
+	<p>한글이 깨집니까?</p>
 	<a href="javascript:testAjax()">test</a>
 	<div class="testList"></div>
 </div>
@@ -27,12 +30,10 @@
 			dataType : 'json', 
 			success : function(data) {
 				var testList = '';
-				console.log(data);
 				if(data.errChk == 'N') {
 					if(data.length > 0) {
 						testList += "<ul>";
 						$.each(data.rtnList, function(key, values) {
-							console.log("key : " + key + ", values : " + values);
 							testList += "<li>" + key + ", "  + values.SEQ + ", " + values.TESTCOL + "</li>";
 						});
 						testList += "</ul>";
