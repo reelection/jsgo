@@ -2,10 +2,8 @@ package egovframework.home.web;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.json.JsonObject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
+
+import egovframework.common.utils.string.StringUtil;
 import egovframework.home.service.HomeService;
 
 
@@ -25,7 +26,7 @@ public class HomeController {
 	private HomeService homeService;
 	
 	@RequestMapping("/main.do")
-	public String homeMain(HttpServletRequest req, HttpServletResponse res, @RequestParam HashMap<String, Object> param, Model model) {
+	public String homeMain(HttpServletRequest req, HttpServletResponse rep, @RequestParam HashMap<String, Object> param, Model model) {
 		
 		HashMap<String, Object> rtnMap = new HashMap<>();
 		
@@ -39,7 +40,7 @@ public class HomeController {
 	
 	
 	@RequestMapping("/login.do")
-	public String login(HttpServletRequest req, HttpServletResponse res, @RequestParam HashMap<String, Object> param, Model model) {
+	public String login(HttpServletRequest req, HttpServletResponse rep, @RequestParam HashMap<String, Object> param, Model model) {
 		return "/home/include/login";
 	}
 	
@@ -58,7 +59,7 @@ public class HomeController {
 	
 	
 	@RequestMapping("/test.do")
-	public String test(HttpServletRequest req, HttpServletResponse res, @RequestParam HashMap<String, Object> param, Model model) {
+	public String test(HttpServletRequest req, HttpServletResponse rep, @RequestParam HashMap<String, Object> param, Model model) {
 		return "/test";
 	}
 	
@@ -66,10 +67,9 @@ public class HomeController {
 	/*----------------------------------------------------------------------------------------------------------------------------------------------------------
 	 * test ajax
 	 * */
-	@SuppressWarnings("rawtypes")
 	@RequestMapping("/testAjax.do")
 	@ResponseBody
-	public Map testAjax(HttpServletRequest req, HttpServletResponse res, @RequestParam HashMap<String, Object> param, Model model) {
+	public void testAjax(HttpServletRequest req, HttpServletResponse rep, @RequestParam HashMap<String, Object> param, Model model) {
 		System.out.println("in testajax");
 		HashMap<String, Object> rtnMap = new HashMap<>();
 		
@@ -84,7 +84,7 @@ public class HomeController {
 			rtnMap.put("errMsg", "시스템 오류가 발생했습니다.");
 			
 		}
-		return rtnMap;
+		StringUtil.printJsonSet(rtnMap, rep);
 	}
 	
 }
