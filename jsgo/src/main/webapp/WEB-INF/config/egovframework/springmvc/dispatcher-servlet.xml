@@ -8,7 +8,7 @@
                 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 	<!-- json파싱을 사용 -->
-	<!-- <mvc:annotation-driven  content-negotiation-manager="contentNegotiationManager" />
+	<mvc:annotation-driven  content-negotiation-manager="contentNegotiationManager" />
 	<bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
 		<property name="favorPathExtension" value="false" />
 		<property name="favorParameter" value="true" />
@@ -18,7 +18,7 @@
 				xml=application/xml
 			</value>
 		</property>
-	</bean> -->
+	</bean>
 	
 	<!-- <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" id="viewResolver" p:order="0"/> -->
 	<!-- <bean class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" id="jsonView">

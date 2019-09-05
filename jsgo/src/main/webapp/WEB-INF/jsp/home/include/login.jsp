@@ -9,10 +9,12 @@
 	<meta name="format-detection" content="telephone=no, address=no, email=no">
 	<meta name="description" content="">
 	<meta name="keywords" content="">
-	<title>테스트 페이지</title>
+	<title>로그인 테스트 페이지</title>
 	
 </head>
 <body>
-	<h1>main</h1>
+	<h1>login</h1>
+	
+
 </body>
 </html>

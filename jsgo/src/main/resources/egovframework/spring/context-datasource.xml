@@ -21,7 +21,7 @@
     <!-- Mysql (POM에서 commons-dbcp, mysql-connector-java 관련 라이브러리 설정 )  -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://127.0.0.1:13306/jsgo" />
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/jsgo" />
         <property name="username" value="jsgo"/>
         <property name="password" value="jsgo1q@W"/>
     </bean>

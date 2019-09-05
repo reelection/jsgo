@@ -16,7 +16,8 @@
 	<h1>test</h1>
 	<a href="javascript:testAjax()">test</a>
 	
-	<script src="/home/js/jquery.min.js"></script>
+
+<script src="/home/js/jquery.min.js"></script>
 <script>
 	$(document).ready(function(){
 		
@@ -24,12 +25,13 @@
 	
 	function testAjax() {
 		$.ajax({
-			type : 'POST', // Http Request Method로 POST로 지정
-			url : '/testAjax.do', // 서버 요청 주소
-			contentType : 'application/json;charset=UTF-8', // 서버 요청시 전송할 데이터가 UTF-8 형식의 JSON 객체임을 명시
-			data : "", // JavaScript 객체를 JSON 객체로 변환하여 서버 요청시 전송
-			dataType : 'json', // 서버로부터 응답받을 데이터가 JSON 객체임을 명시하여 수작업 없이 응답 데이터를 JavaScript 객체로 획득
+			type : 'POST', 
+			url : '/testAjax.do', 
+			contentType : 'application/json;charset=UTF-8', 
+			data : "", 
+			dataType : 'json', 
 			success : function(data) {
+				alert("success");
 				console.log(data);
 			},
 			error:function() {
