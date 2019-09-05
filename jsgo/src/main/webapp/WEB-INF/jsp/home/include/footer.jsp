@@ -1,6 +1,6 @@
 <div class="footer">
 	<h1>Footer</h1>
 </div>
-</div> <!-- //wrap -->
+</div> <!-- //wrap 끝 -->
 </body>
 </html>

@@ -70,13 +70,13 @@ public class HomeController {
 	@RequestMapping("/testAjax.do")
 	@ResponseBody
 	public void testAjax(HttpServletRequest req, HttpServletResponse rep, @RequestParam HashMap<String, Object> param, Model model) {
-		System.out.println("in testajax");
 		HashMap<String, Object> rtnMap = new HashMap<>();
 		
 		try {
 			ArrayList<HashMap<String,Object>> rtnList = homeService.testList(param);
 			rtnMap.put("errChk", "N");
 			rtnMap.put("rtnList", rtnList);
+			rtnMap.put("length", rtnList.size());
 			
 		} catch (Exception e) {
 			rtnMap.put("errChk", "Y");
